@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="PreCompiler">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Utilitys">
+      <UniqueIdentifier>{1ef3a8ca-b0cb-4a8d-b0b4-cb02ce2f477c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vector">
+      <UniqueIdentifier>{7a8ac78f-4785-45b1-9b32-a4ea6343046d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{5f206338-7f95-40a3-b751-2d98f2e11785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Classes">
+      <UniqueIdentifier>{32cd0f1b-7e3a-46c2-983f-c9ad14ea0900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Classes\Engine">
+      <UniqueIdentifier>{f13d3815-1973-4532-8775-817d9ed0e045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Classes\Client">
+      <UniqueIdentifier>{3dd33e5c-21f6-42dd-86c5-4d4bf07e7a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Classes\UserCMD">
+      <UniqueIdentifier>{2f417416-46ac-4d03-92aa-32511ffd0d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\VMT">
+      <UniqueIdentifier>{974e3750-f122-4b48-b806-e611fdbec6e3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source Files\Game Classes\CEngine\CEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Game Classes\Interfaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Main\Entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Utilitys\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\VMT\Vmt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source Files\Game Classes\CEngine\CEngine.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Game Classes\CHLClient\CHLClient.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Game Classes\CUserCMD\CUserCmd.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Main\Includes.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Utilitys\Utility.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Vector\Vector.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\VMT\Vmt.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
