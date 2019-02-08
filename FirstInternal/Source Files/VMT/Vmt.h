@@ -1,18 +1,65 @@
 #pragma once
-#include "../Main/Includes.h"
 
-class CVmt 
+#include "Includes.h"
+
+class CVmt
 {
 public:
-	CVmt(void* pObjectVmtPtr) 
+
+	CVmt(void* pObjectVmtPtr) : m_iVmtSize(CountFunctions())
 	{
 		m_Vmt = *((NTypedefs::t_pVmt)pObjectVmtPtr);
 	}
 
-	int CountFunctions();
-	int FindFunctionIndex(void* pfnVoidFunctionPointer);
-	void* FindFunctionPtr(int iIndex);
+	virtual int CountFunctions() const;
+	virtual int FindFunctionIndex(void* pfnVoidFunctionPointer) const;
+	virtual void* FindFunctionPtr(int iIndex) const;
+
+protected:
+	void** m_Vmt;
+	int m_iVmtSize;
+};
+
+class CVmtHookManager : public CVmt
+{
+public:
+	~CVmtHookManager() 
+	{
+
+	}
+
+	bool UnhookAll() 
+	{
+		for (int i = 0; i < m_iVmtSize; i++) 
+		{
+			if (!Unhook(i))
+				return false;
+		}
+		return true;
+	}
+
+	bool Unhook(int iIndex) 
+	{
+		if (m_pfnOriginalFunctionPointer[iIndex] = NULL)
+			return false;
+		else 
+		{
+			m_Vmt[iIndex] = m_pfnOriginalFunctionPointer[iIndex];
+			m_pfnCurrentFunctionPointer[iIndex] = m_pfnOriginalFunctionPointer[iIndex];
+		}
+	}
+
+	bool Hook(void* fpn, int iIndex) 
+	{
+
+	}
+
+	void UpdateSize(int iNewSize) 
+	{
+		m_iVmtSize = iNewSize;
+	}
 
 private:
-	void** m_Vmt;
-}; 
+	void* m_pfnOriginalFunctionPointer[5] = {0,0,0,0,0};
+	void* m_pfnCurrentFunctionPointer[1] = {};
+};
