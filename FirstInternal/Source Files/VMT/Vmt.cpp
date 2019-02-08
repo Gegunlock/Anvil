@@ -4,7 +4,7 @@
 int CVmt::CountFunctions() 
 {
 	int iVFuncCount = 0;
-	while (/*Points To Beginning of VMT*/m_Vmt[iVFuncCount])
+	while (m_Vmt[iVFuncCount])
 	{
 		iVFuncCount++;
 	}
