@@ -3,15 +3,26 @@
 
 int CVmt::CountFunctions() const
 {
-	return 0;
+	int iVFuncCount = 0;
+	while (/*Points To Beginning of VMT*/m_Vmt[iVFuncCount])
+	{
+		iVFuncCount++;
+	}
+	return iVFuncCount;
 }
 
 int CVmt::FindFunctionIndex(void * pfnVoidFunctionPointer) const
 {
-	return 0;
+	int iNumberOfVFuncs = this->CountFunctions();
+	for (int i = 0; i < iNumberOfVFuncs; i++)
+	{
+		if (m_Vmt[i] == pfnVoidFunctionPointer)
+			return i;
+	}
+	return -1;
 }
 
 void * CVmt::FindFunctionPtr(int iIndex) const
 {
-	return nullptr;
+	return m_Vmt[iIndex];
 }
