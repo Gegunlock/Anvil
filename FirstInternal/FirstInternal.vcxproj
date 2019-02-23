@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source Files\Game Classes\CEngine\CEngine.cpp" />
-    <ClCompile Include="Source Files\Game Classes\Interfaces.cpp" />
     <ClCompile Include="Source Files\Main\Entry.cpp" />
     <ClCompile Include="Source Files\Utilitys\Utility.cpp" />
     <ClCompile Include="Source Files\VMT\Vmt.cpp" />

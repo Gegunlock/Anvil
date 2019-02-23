@@ -4,7 +4,7 @@
 int CVmt::CountFunctions() const
 {
 	int iVFuncCount = 0;
-	while (/*Points To Beginning of VMT*/m_Vmt[iVFuncCount])
+	while (m_Vmt[iVFuncCount])
 	{
 		iVFuncCount++;
 	}
@@ -25,4 +25,19 @@ int CVmt::FindFunctionIndex(void * pfnVoidFunctionPointer) const
 void * CVmt::FindFunctionPtr(int iIndex) const
 {
 	return m_Vmt[iIndex];
+}
+
+bool CVmt::Unhook(int iIndex) 
+{
+
+}
+
+bool CVmt::UnhookAll() 
+{
+	
+}
+
+void CVmt::Hook(void* fpn, int iIndex) 
+{
+
 }

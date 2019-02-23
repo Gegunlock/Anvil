@@ -24,6 +24,7 @@ public:
 	int FindFunctionIndex(void* pfnVoidFunctionPointer) const;
 	void* FindFunctionPtr(int iIndex) const;
 
+	//Hooking Functions ... Vmt hooking supposedly deteceted
 	bool Unhook(int iIndex);
 	bool UnhookAll();
 	void Hook(void* fpn, int iIndex);
