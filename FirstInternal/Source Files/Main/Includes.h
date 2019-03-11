@@ -11,6 +11,8 @@
 #include "../Utilitys/Utility.h"
 #include "../Vector/Vector.h"
 #include "../VMT/Vmt.h"
-#include "../Game Classes/CEngine/CEngine.h"
-#include "../Game Classes/CHLClient/CHLClient.h"
-#include "../Game Classes/CUserCMD/CUserCmd.h"
+#include "../SDK/IVEngineClient/IVEngineClient.h"
+#include "../SDK/CHLClient/CHLClient.h"
+#include "../SDK/IBaseClientDLL/IBaseClientDLL.h"
+
+DWORD WINAPI ThreadLoop(LPVOID lpParameter);

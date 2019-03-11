@@ -19,15 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source Files\Game Classes\CEngine\CEngine.cpp" />
+    <ClCompile Include="Source Files\SDK\IVEngineClient\IVEngineClient.cpp" />
     <ClCompile Include="Source Files\Main\Entry.cpp" />
+    <ClCompile Include="Source Files\Main\Loop.cpp" />
     <ClCompile Include="Source Files\Utilitys\Utility.cpp" />
     <ClCompile Include="Source Files\VMT\Vmt.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source Files\Game Classes\CEngine\CEngine.h" />
-    <ClInclude Include="Source Files\Game Classes\CHLClient\CHLClient.h" />
-    <ClInclude Include="Source Files\Game Classes\CUserCMD\CUserCmd.h" />
+    <ClInclude Include="Source Files\SDK\IVEngineClient\IVEngineClient.h" />
+    <ClInclude Include="Source Files\SDK\CHLClient\CHLClient.h" />
+    <ClInclude Include="Source Files\SDK\IBaseClientDLL\IBaseClientDLL.h" />
     <ClInclude Include="Source Files\Main\Includes.h" />
     <ClInclude Include="Source Files\Utilitys\Utility.h" />
     <ClInclude Include="Source Files\Vector\Vector.h" />

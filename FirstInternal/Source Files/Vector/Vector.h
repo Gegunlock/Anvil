@@ -135,3 +135,5 @@ inline Vector Vector::operator / (const float &i) const
 {
 	return Vector(x / i, y / i, z / i);
 }
+
+typedef Vector QAngle;

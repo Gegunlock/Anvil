@@ -14,7 +14,7 @@ int CVmt::CountFunctions() const
 int CVmt::FindFunctionIndex(void * pfnVoidFunctionPointer) const
 {
 	int iNumberOfVFuncs = this->CountFunctions();
-	for (int i = 0; i < iNumberOfVFuncs; i++)
+	for (DWORD i = 0; i < iNumberOfVFuncs; i++)
 	{
 		if (m_Vmt[i] == pfnVoidFunctionPointer)
 			return i;

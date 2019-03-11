@@ -39,12 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source Files\Game Classes\CEngine\CEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source Files\Game Classes\Interfaces.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\Main\Entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,17 +48,14 @@
     <ClCompile Include="Source Files\VMT\Vmt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source Files\Main\Loop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\SDK\IVEngineClient\IVEngineClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source Files\Game Classes\CEngine\CEngine.h">
-      <Filter>PreCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="Source Files\Game Classes\CHLClient\CHLClient.h">
-      <Filter>PreCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="Source Files\Game Classes\CUserCMD\CUserCmd.h">
-      <Filter>PreCompiler</Filter>
-    </ClInclude>
     <ClInclude Include="Source Files\Main\Includes.h">
       <Filter>PreCompiler</Filter>
     </ClInclude>
@@ -75,6 +66,15 @@
       <Filter>PreCompiler</Filter>
     </ClInclude>
     <ClInclude Include="Source Files\VMT\Vmt.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\SDK\CHLClient\CHLClient.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\SDK\IBaseClientDLL\IBaseClientDLL.h">
+      <Filter>PreCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\SDK\IVEngineClient\IVEngineClient.h">
       <Filter>PreCompiler</Filter>
     </ClInclude>
   </ItemGroup>
