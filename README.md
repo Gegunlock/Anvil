@@ -1,2 +1,0 @@
-# CSGOInternal
-Internal For Csgo
