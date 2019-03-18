@@ -27,11 +27,11 @@ namespace SDK
 		virtual void GetViewAngles(QAngle& Angles);  // 18
 		virtual int	 SetViewAngles(QAngle& Angles);  // 19
 		virtual int  GetMaxClients(void);  //20
-		virtual void unknown21(void);
-		virtual void unknown22(void);
-		virtual void unknown23(void);
-		virtual void unknown24(void);
-		virtual void unknown25(void);
+		virtual void unknown21(void);  //21
+		virtual void unknown22(void);  //22
+		virtual void unknown23(void);  //23
+		virtual void unknown24(void);  //24
+		virtual void unknown25(void);  //25
 		virtual bool IsInGame(void);  // 26
 		virtual bool IsConnected(void);  //27
 	};

@@ -12,7 +12,7 @@ namespace Init
 {
 	DWORD WINAPI Init(LPVOID lpThreadParameter)
 	{
-		Tools::SetupConsole("Anvil Beta");
+		Tools::SetupConsole("Anvil");
 		std::cout << "INJECTED" << std::endl;
 
 		Tools::VirtualMethodTableHook IVEngineClient_hook(g_Interfaces.GetIVEngineClientInterface());

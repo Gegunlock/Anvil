@@ -5,6 +5,6 @@ namespace SDK
 	class IBaseClientDLL
 	{
 	public:
-		virtual void unknown1(void) = 0;
+		virtual void unknown1(void)
 	};
 }
