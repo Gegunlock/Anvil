@@ -38,6 +38,6 @@ namespace Hooks
 
     void ShutDown(void)
     {
-        pDirectXDevice_Hooked.~VirtualMethodTableHook();
+        pDirectXDevice_Hooked.UnhookAll();
     }
 }
