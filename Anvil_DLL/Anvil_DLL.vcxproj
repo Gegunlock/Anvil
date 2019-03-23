@@ -19,25 +19,46 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Gui\Gui.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Gui\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="Main\Main.cpp" />
-    <ClCompile Include="Main\Init\Init.cpp" />
-    <ClCompile Include="Interfaces\Interfaces.cpp" />
-    <ClCompile Include="Math\Vector\Vector.cpp" />
-    <ClCompile Include="SDK\IVEngineClient\IVEngineClient.cpp" />
+    <ClCompile Include="Main\Init\Interfaces\Interfaces.cpp" />
+    <ClCompile Include="SDK\Math\Vector\Vector.cpp" />
+    <ClCompile Include="SDK\Misc\ChecksumCRC\checksum_crc.cpp" />
+    <ClCompile Include="SDK\Misc\ChecksumMD5\checksum_md5.cpp" />
+    <ClCompile Include="Tools\Utilitys\Patternscaning.cpp" />
     <ClCompile Include="Tools\Utilitys\Utility.cpp" />
-    <ClCompile Include="Hooks\Hooks.cpp" />
+    <ClCompile Include="Main\Init\Hooks\Hooks.cpp" />
     <ClCompile Include="Tools\VMT\VMTableHook.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main\Init\Init.h" />
-    <ClInclude Include="Interfaces\Interfaces.h" />
-    <ClInclude Include="SDK\CUserCMD\CUserCmd.h" />
-    <ClInclude Include="SDK\IBaseClientDLL\IBaseClientDLL.h" />
-    <ClInclude Include="SDK\IVEngineClient\IVEngineClient.h" />
-    <ClInclude Include="Math\QAngle\QAngle.h" />
-    <ClInclude Include="Math\Vector\Vector.h" />
+    <ClInclude Include="Gui\Gui.h" />
+    <ClInclude Include="Gui\ImGui\imconfig.h" />
+    <ClInclude Include="Gui\ImGui\imgui.h" />
+    <ClInclude Include="Gui\ImGui\imgui_impl_dx9.h" />
+    <ClInclude Include="Gui\ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="Gui\ImGui\imgui_internal.h" />
+    <ClInclude Include="Gui\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="Gui\ImGui\imstb_textedit.h" />
+    <ClInclude Include="Gui\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Main\Init\Interfaces\Interfaces.h" />
+    <ClInclude Include="SDK\Misc\ChecksumCRC\checksum_crc.h" />
+    <ClInclude Include="SDK\Misc\ChecksumMD5\checksum_md5.h" />
+    <ClInclude Include="SDK\Misc\CInput.h" />
+    <ClInclude Include="SDK\Misc\CUserCmd.h" />
+    <ClInclude Include="SDK\Interfaces\IBaseClientDLL.h" />
+    <ClInclude Include="SDK\Interfaces\IClientMode.h" />
+    <ClInclude Include="SDK\Interfaces\IVEngineClient.h" />
+    <ClInclude Include="SDK\Math\QAngle\QAngle.h" />
+    <ClInclude Include="SDK\Math\Vector\Vector.h" />
+    <ClInclude Include="Tools\Utilitys\Patternscaning.h" />
     <ClInclude Include="Tools\Utilitys\Utility.h" />
-    <ClInclude Include="Hooks\Hooks.h" />
+    <ClInclude Include="Main\Init\Hooks\Hooks.h" />
     <ClInclude Include="Tools\VMT\VMTableHook.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -94,12 +115,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);$(ExecutablePath);$(DXSDK_DIR)Utilities\bin\x86</ExecutablePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(LibraryPath);$(DXSDK_DIR)Lib\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);$(ExecutablePath);$(DXSDK_DIR)Utilities\bin\x86</ExecutablePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(LibraryPath);$(DXSDK_DIR)Lib\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

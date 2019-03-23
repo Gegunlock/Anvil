@@ -1,2 +1,6 @@
-﻿  Init.cpp
+﻿  Gui.cpp
+  Hooks.cpp
+  Interfaces.cpp
+  Main.cpp
+  Generating Code...
   Anvil_DLL.vcxproj -> C:\Users\Admin\source\repos\Anvil_Internal\Debug\Anvil_DLL.dll
