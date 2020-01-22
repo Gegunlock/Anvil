@@ -3,14 +3,14 @@
 
 namespace Tools 
 {
-    class VirtualMethodTableHook
+    class VmtHook
     {
-        using ppVMT_t = void***;
-        using pVMT_t = void**;
+        using pVMT_t = void***;
+        using VMT_t = void**;
 
     public:
-        VirtualMethodTableHook(void* pObj = nullptr);
-        ~VirtualMethodTableHook();
+        VmtHook(void* pObj = nullptr);
+        ~VmtHook();
 
         bool  Init(void* pObj);
         void* GetOriginal(int Index) const;
@@ -21,9 +21,9 @@ namespace Tools
     private:
         int    CountVirtualFunctions(void) const;
 
-        ppVMT_t    m_pObj = nullptr;
-        pVMT_t     m_NewVmt = nullptr;
-        pVMT_t     m_OriginalVmt = nullptr;
+        pVMT_t    m_pObj = nullptr;
+        VMT_t     m_NewVmt = nullptr;
+        VMT_t     m_OriginalVmt = nullptr;
         byte*     m_pHookedFunctions = nullptr;
         int       m_VirtualFunctionCount = 0;
     };

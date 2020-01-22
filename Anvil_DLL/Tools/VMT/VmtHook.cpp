@@ -1,10 +1,10 @@
-#include "VMTableHook.h"
+#include "VmtHook.h"
 
 #include <memory>
 
 namespace Tools
 {
-    VirtualMethodTableHook::VirtualMethodTableHook(void * pObjToBeHooked) : m_pObj((ppVMT_t)pObjToBeHooked)
+    VmtHook::VmtHook(void * pObjToBeHooked) : m_pObj((pVMT_t)pObjToBeHooked)
     {
         if (pObjToBeHooked == nullptr)
             return;
@@ -21,7 +21,7 @@ namespace Tools
         *m_pObj = m_NewVmt;
     }
 
-    VirtualMethodTableHook::~VirtualMethodTableHook()
+    VmtHook::~VmtHook()
     {
         if (m_NewVmt == nullptr)
             return;
@@ -31,11 +31,11 @@ namespace Tools
         delete[] m_pHookedFunctions;
     }
 
-    bool VirtualMethodTableHook::Init(void * pObjToBeHooked)
+    bool VmtHook::Init(void * pObjToBeHooked)
     {
         if (m_NewVmt == nullptr)
         {
-            m_pObj = (ppVMT_t)pObjToBeHooked;
+            m_pObj = (pVMT_t)pObjToBeHooked;
             m_OriginalVmt = *m_pObj;
 
             m_VirtualFunctionCount = CountVirtualFunctions();
@@ -51,7 +51,7 @@ namespace Tools
         return false;
     }
 
-    int VirtualMethodTableHook::CountVirtualFunctions(void) const
+    int VmtHook::CountVirtualFunctions(void) const
     {
         if (m_OriginalVmt == nullptr)
             return -1;
@@ -64,12 +64,12 @@ namespace Tools
         return VirtualFunctionCount;
     }
 
-    void* VirtualMethodTableHook::GetOriginal(int Index) const
+    void* VmtHook::GetOriginal(int Index) const
     {
         return m_OriginalVmt[Index];
     }
 
-    bool VirtualMethodTableHook::Hook(void * NewFunctionPointer, int Index)
+    bool VmtHook::Hook(void * NewFunctionPointer, int Index)
     {
         if (m_pHookedFunctions[Index] != 0 || Index > m_VirtualFunctionCount || Index < 0)
             return false;
@@ -79,7 +79,7 @@ namespace Tools
         return true;
     }
 
-    bool VirtualMethodTableHook::Unhook(int Index)
+    bool VmtHook::Unhook(int Index)
     {
         if (m_pHookedFunctions[Index] != 1 || Index > m_VirtualFunctionCount || Index < 0)
             return false;
@@ -89,7 +89,7 @@ namespace Tools
         return true;
     }
 
-    void VirtualMethodTableHook::UnhookAll(void)
+    void VmtHook::UnhookAll(void)
     {
         for (int Index = 0; Index < m_VirtualFunctionCount; Index++)
         {

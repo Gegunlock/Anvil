@@ -11,7 +11,11 @@
 
 #include "Themes/Themes.h"
 
+#include "../Main/Settings.h"
+
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
+
+bool Config::Gui::Toggle = false;
 
 namespace Gui
 {
@@ -19,13 +23,18 @@ namespace Gui
 
     WNDPROC oWndProc;
 
-    LRESULT CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    LRESULT CALLBACK hkWndProc(const HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
-        ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
-        return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+        if (Config::Gui::Toggle)
+        {
+            ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam);
+            return true;
+        }
+        return CallWindowProc(oWndProc, hWnd, msg, wParam, lParam);
+
     }
 
-    //===============================================================================
+    //===== ==========================================================================
 
     void Initialize(IDirect3DDevice9 * pDevice)
     {
@@ -36,6 +45,9 @@ namespace Gui
 
             ImGui::CreateContext();
             ImGuiIO& io = ImGui::GetIO();
+
+            io.MouseDrawCursor = true;
+            io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
             ImGui_ImplWin32_Init(FindWindowA(NULL, "Counter-Strike: Global Offensive"));
             ImGui_ImplDX9_Init(pDevice);
@@ -48,6 +60,15 @@ namespace Gui
 
     void Render(IDirect3DDevice9 * pDevice)
     {
+        if ((GetAsyncKeyState(VK_ESCAPE) & 1) && Config::Gui::Toggle)
+            Config::Gui::Toggle = 0;
+
+        if (GetAsyncKeyState(VK_INSERT) & 1) 
+            Config::Gui::Toggle = !Config::Gui::Toggle;
+
+        if (!Config::Gui::Toggle)
+            return;
+
         DWORD dwOld_D3DRS_COLORWRITEENABLE;  // Allows us to draw without net_graph
         pDevice->GetRenderState(D3DRS_COLORWRITEENABLE, &dwOld_D3DRS_COLORWRITEENABLE);  // Allows us to draw without net_graph
         pDevice->SetRenderState(D3DRS_COLORWRITEENABLE, 0xffffffff);  // Allows us to draw without net_graph
@@ -58,7 +79,11 @@ namespace Gui
         ImGui::NewFrame();
 
         // Begin Window
+
         ImGui::Begin("Anvil");
+
+        ImGui::Checkbox("Bhop", &Config::Bunnyhop::Enable);
+
         ImGui::End();
 
         // End Frame

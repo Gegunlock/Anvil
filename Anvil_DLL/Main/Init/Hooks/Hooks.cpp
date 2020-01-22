@@ -13,20 +13,26 @@
 
 #include "../Interfaces/Interfaces.h"
 #include "../../../SDK/Misc/UserCmd.h"
-#include "../../Tools/VMT/VMTableHook.h"
+#include "../../Tools/VMT/VmtHook.h"
+
+#include "../../../Features/Features.h"
+
+#include "../../Settings.h"
 
 #include <iostream>
 
+const int ENDSCENE_INDEX = 42;
+const int RESET_INDEX = 16;
+const int CREATEMOVE_INDEX = 24;
+const int LOCKCURSOR_INDEX = 67;
+
 namespace Hooks 
 {
-    const int ENDSCENE_INDEX = 42;
-    const int RESET_INDEX = 16;
-    const int CREATEMOVE_INDEX = 24;
+    Tools::VmtHook pDirectXDevice_Hooked;
+    Tools::VmtHook pClientMode_Hooked;
+    Tools::VmtHook pSurface_Hooked;
 
-    Tools::VirtualMethodTableHook pDirectXDevice_Hooked;
-    Tools::VirtualMethodTableHook pClientMode_Hooked;
-
-    //==================================================================================================================
+    // pDirectXDevice ==================================================================================================
 
     HRESULT __stdcall hkEndScene(IDirect3DDevice9 * pDevice)  // 42
     {
@@ -45,42 +51,64 @@ namespace Hooks
         fReset_t oReset = (fReset_t)pDirectXDevice_Hooked.GetOriginal(RESET_INDEX);
 
         ImGui_ImplDX9_InvalidateDeviceObjects();
-        HRESULT Return = oReset(pDevice, pPresentationParameters);
         ImGui_ImplDX9_CreateDeviceObjects();
 
-        return Return;
+        return  oReset(pDevice, pPresentationParameters);
     }
 
-    //==================================================================================================================
+    // pClientMode =====================================================================================================
 
-    bool __stdcall hkCreateMove(float SampleTime, SDK::CUserCmd* UserCmd) 
+    bool __stdcall hkCreateMove(float SampleTime, SDK::CUserCmd* UserCmd)  // 24
     {
         using fCreateMove_t = bool(__stdcall*)(float, SDK::CUserCmd*);
         fCreateMove_t oCreateMove = (fCreateMove_t) pClientMode_Hooked.GetOriginal(CREATEMOVE_INDEX);
 
-        std::cout << "x: 0"<< " | " << "y: " << UserCmd->viewangles.y << " | " << "z: " << UserCmd->viewangles.z << std::endl;
+        SDK::IClientEntity* ClientEntity = (Interfaces::pEntityList->GetClientEntity(Interfaces::pEngine->GetLocalPlayer()));
+
+        Features::Bunnyhop(ClientEntity, UserCmd);
 
         return oCreateMove(SampleTime, UserCmd);
+    }
+
+    // pSurface =========================================================================================================
+
+    void __fastcall hkLockCursor(void* Self)  // 67
+    {
+        using fLockCursor_t = void(__fastcall*)(void*);
+        fLockCursor_t oLockCursor = (fLockCursor_t)pSurface_Hooked.GetOriginal(LOCKCURSOR_INDEX);
+
+        if (Config::Gui::Toggle) 
+        {
+            Interfaces::pSurface->UnlockCursor();
+            Interfaces::pInputSystem->ResetInputState();
+            return;
+        }
+
+        oLockCursor(Self);
     }
 
     //==================================================================================================================
 
     void Initialize(void)
     {
-        // Initalize Object Hooks
+        // Initalize Vmt Hooks
         pDirectXDevice_Hooked.Init((void*)Interfaces::pDirectXDevice);
         pClientMode_Hooked.Init((void*)Interfaces::pClientMode);
+        pSurface_Hooked.Init((void*)Interfaces::pSurface);
 
         // Function Hooks
         pDirectXDevice_Hooked.Hook(hkEndScene, ENDSCENE_INDEX);
         pDirectXDevice_Hooked.Hook(hkReset, RESET_INDEX);
 
         pClientMode_Hooked.Hook(hkCreateMove, CREATEMOVE_INDEX);
+
+        pSurface_Hooked.Hook(hkLockCursor, LOCKCURSOR_INDEX);
     }
 
     void ShutDown(void)
     {
         pDirectXDevice_Hooked.UnhookAll();
         pClientMode_Hooked.UnhookAll();
+        pSurface_Hooked.UnhookAll();
     }
 }

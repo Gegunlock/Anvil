@@ -2,8 +2,8 @@
 
 namespace SDK 
 {
-    class IClientModeShared 
+    class IClientMode
     {
-
+    public:
     };
 }

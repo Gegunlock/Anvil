@@ -15,16 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tools\Utilitys\Utility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\VMT\VMTableHook.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\Utilitys\Patternscaning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main\Init\Hooks\Hooks.cpp">
@@ -54,26 +45,26 @@
     <ClCompile Include="Gui\Gui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Main\SDK\Math\Vector\Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Gui\Themes\Themes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SDK\Math\Vector\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\VMT\VmtHook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Bhop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Utilities\Patternscaning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Utilities\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tools\Utilitys\Utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\VMT\VMTableHook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\Utilitys\Patternscaning.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Main\Init\Hooks\Hooks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -107,25 +98,7 @@
     <ClInclude Include="Gui\Gui.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Main\SDK\Interfaces\IBaseClientDLL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\SDK\Interfaces\IVEngineClient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\SDK\Math\QAngle\QAngle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\SDK\Math\Vector\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\SDK\Misc\UserCmd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Gui\Themes\Themes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\SDK\Interfaces\IClientModeShared.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDK\Misc\UserCmd.h">
@@ -140,10 +113,40 @@
     <ClInclude Include="SDK\Interfaces\IVEngineClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\IClientModeShared.h">
+    <ClInclude Include="SDK\Interfaces\IBaseClientDLL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\IBaseClientDLL.h">
+    <ClInclude Include="SDK\Interfaces\IClientMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interfaces\IClientEntityList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interfaces\IClientEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\VMT\VmtHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Bhop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Features.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interfaces\ISurface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interfaces\IInputSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Utilities\Patternscaning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Utilities\Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

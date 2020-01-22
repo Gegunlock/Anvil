@@ -26,7 +26,7 @@ namespace Tools
     }
     void* GetVirtualMethod(void* Self, int Index)
     {
-        void** pVmt = *(void***)Self;
-        return pVmt[Index];
+        void** Vmt = *(void***)Self;
+        return Vmt[Index];
     }
 }

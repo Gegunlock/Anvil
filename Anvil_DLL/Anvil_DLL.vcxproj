@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Features\Bhop.cpp" />
     <ClCompile Include="Gui\Gui.cpp" />
     <ClCompile Include="Gui\ImGui\imgui.cpp" />
     <ClCompile Include="Gui\ImGui\imgui_demo.cpp" />
@@ -30,12 +31,14 @@
     <ClCompile Include="Main\Main.cpp" />
     <ClCompile Include="Main\Init\Interfaces\Interfaces.cpp" />
     <ClCompile Include="SDK\Math\Vector\Vector.cpp" />
-    <ClCompile Include="Tools\Utilitys\Patternscaning.cpp" />
-    <ClCompile Include="Tools\Utilitys\Utility.cpp" />
+    <ClCompile Include="Tools\Utilities\Patternscaning.cpp" />
+    <ClCompile Include="Tools\Utilities\Utility.cpp" />
     <ClCompile Include="Main\Init\Hooks\Hooks.cpp" />
-    <ClCompile Include="Tools\VMT\VMTableHook.cpp" />
+    <ClCompile Include="Tools\VMT\VmtHook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Features\Bhop.h" />
+    <ClInclude Include="Features\Features.h" />
     <ClInclude Include="Gui\Gui.h" />
     <ClInclude Include="Gui\ImGui\imconfig.h" />
     <ClInclude Include="Gui\ImGui\imgui.h" />
@@ -47,16 +50,21 @@
     <ClInclude Include="Gui\ImGui\imstb_truetype.h" />
     <ClInclude Include="Gui\Themes\Themes.h" />
     <ClInclude Include="Main\Init\Interfaces\Interfaces.h" />
+    <ClInclude Include="Main\Settings.h" />
     <ClInclude Include="SDK\Interfaces\IBaseClientDLL.h" />
-    <ClInclude Include="SDK\Interfaces\IClientModeShared.h" />
+    <ClInclude Include="SDK\Interfaces\IClientEntity.h" />
+    <ClInclude Include="SDK\Interfaces\IClientEntityList.h" />
+    <ClInclude Include="SDK\Interfaces\IClientMode.h" />
+    <ClInclude Include="SDK\Interfaces\IInputSystem.h" />
+    <ClInclude Include="SDK\Interfaces\ISurface.h" />
     <ClInclude Include="SDK\Interfaces\IVEngineClient.h" />
     <ClInclude Include="SDK\Math\QAngle\QAngle.h" />
     <ClInclude Include="SDK\Math\Vector\Vector.h" />
     <ClInclude Include="SDK\Misc\UserCmd.h" />
-    <ClInclude Include="Tools\Utilitys\Patternscaning.h" />
-    <ClInclude Include="Tools\Utilitys\Utility.h" />
+    <ClInclude Include="Tools\Utilities\Patternscaning.h" />
+    <ClInclude Include="Tools\Utilities\Utility.h" />
     <ClInclude Include="Main\Init\Hooks\Hooks.h" />
-    <ClInclude Include="Tools\VMT\VMTableHook.h" />
+    <ClInclude Include="Tools\VMT\VmtHook.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

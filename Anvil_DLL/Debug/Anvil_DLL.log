@@ -1,2 +1,5 @@
-﻿  VMTableHook.cpp
+﻿  Main.cpp
+  Interfaces.cpp
+  Utility.cpp
+  Generating Code...
   Anvil_DLL.vcxproj -> C:\Users\Admin\source\repos\Anvil_Internal\Debug\Anvil_DLL.dll
