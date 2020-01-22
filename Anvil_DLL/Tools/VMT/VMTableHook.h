@@ -6,7 +6,7 @@ namespace Tools
     class VirtualMethodTableHook
     {
         using ppVMT_t = void***;
-        using pVMT_t    = void**;
+        using pVMT_t = void**;
 
     public:
         VirtualMethodTableHook(void* pObj = nullptr);

@@ -4,6 +4,6 @@
 
 namespace Gui 
 {
-    bool Initialize(IDirect3DDevice9 * pDevice);
-    void Render(void);
+    void Initialize(IDirect3DDevice9 * pDevice);
+    void Render(IDirect3DDevice9 * pDevice);
 }

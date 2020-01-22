@@ -1079,7 +1079,7 @@ static void*    GImAllocatorUserData = NULL;
 // [SECTION] MAIN USER FACING STRUCTURES (ImGuiStyle, ImGuiIO)
 //-----------------------------------------------------------------------------
 
-ImGuiStyle::ImGuiStyle()
+ImGuiStyle::ImGuiStyle()  // Style Guide
 {
     Alpha                   = 1.0f;             // Global alpha applies to everything in ImGui
     WindowPadding           = ImVec2(8,8);      // Padding within a window

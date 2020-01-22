@@ -4,9 +4,9 @@
 
 namespace Tools
 {
-    void* CreateInterface(const char *DLL, const char *InterfaceName)
+    void* CreateInterface(const char* DLL, const char *InterfaceName)
     {
-        using fCreateInterface_t = void*(*)(const char *, int *);
+        using fCreateInterface_t = void*(*)(const char*, int*);
         return ((fCreateInterface_t)GetProcAddress(GetModuleHandle(DLL), "CreateInterface"))(InterfaceName, nullptr);
     }
 
@@ -23,5 +23,10 @@ namespace Tools
         freopen_s(&fp, "CONOUT$", "w", stdout);
         SetConsoleTitle(Title);
         return TRUE;
+    }
+    void* GetVirtualMethod(void* Self, int Index)
+    {
+        void** pVmt = *(void***)Self;
+        return pVmt[Index];
     }
 }

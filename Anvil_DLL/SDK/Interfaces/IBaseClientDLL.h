@@ -5,6 +5,6 @@ namespace SDK
     class IBaseClientDLL
     {
     public:
-        virtual void unknown1(void);
+        void HUDProcessInput(void);  // 10
     };
 }
